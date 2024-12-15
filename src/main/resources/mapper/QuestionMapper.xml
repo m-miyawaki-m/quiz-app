@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.quizapp.mapper.QuestionMapper">
+    <select id="findById" parameterType="long" resultType="com.example.quizapp.entity.Question">
+        SELECT question_id, question_text, media_url, genre_id, field_id, mock_id, difficulty
+        FROM questions
+        WHERE question_id = #{id}
+    </select>
+
+    <select id="findAll" resultType="com.example.quizapp.entity.Question">
+        SELECT question_id, question_text, media_url, genre_id, field_id, mock_id, difficulty
+        FROM questions
+    </select>
+</mapper>
